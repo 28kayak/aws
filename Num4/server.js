@@ -377,11 +377,13 @@ function checksales(req_query){
                 if(fixed_salse.includes(".00"))
                 {
                     //salse value was actually int
-                    result = products[index].name + " : " + parseInt(fixed_salse);
+                    //result = products[index].name + " : " + parseInt(fixed_salse);
+                    result = "salse" + " : " + parseInt(fixed_salse);
                 }
                 else
                 {
-                    result = products[index].name + " : "+ fixed_salse;
+                    //result = products[index].name + " : "+ fixed_salse;
+                    result =  "salse" + " : " + fixed_salse;
                 }
 
             }
