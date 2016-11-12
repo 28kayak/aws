@@ -346,7 +346,8 @@ function checksales(req_query){
                 temp_salse = parseFloat(products[index].salse);
                 fixed_salse = temp_salse.toFixed(2);
 
-                result = products[index].name + " : "+ fixed_salse ;
+                //result = products[index].name + " : "+ fixed_salse ;
+                result =  "sales" + ": " + fixed_salse;
             }
             else
             {
@@ -379,12 +380,12 @@ function checksales(req_query){
                 {
                     //salse value was actually int
                     //result = products[index].name + " : " + parseInt(fixed_salse);
-                    result = "sales" + " : " + parseInt(fixed_salse);
+                    result = "sales" + ": " + parseInt(fixed_salse);
                 }
                 else
                 {
                     //result = products[index].name + " : "+ fixed_salse;
-                    result =  "sales" + " : " + fixed_salse;
+                    result =  "sales" + ": " + fixed_salse;
                 }
 
             }
