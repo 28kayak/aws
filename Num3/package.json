@@ -1,0 +1,15 @@
+{
+  "name": "num3",
+  "version": "1.0.0",
+  "description": "kadai 3",
+  "main": "node server.js",
+  "scripts": {
+    "test": "curl http://54.238.241.223:8080/calc?1+1",
+    "start": "node server.js"
+  },
+  "author": "Kaya Ota",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
