@@ -8,7 +8,7 @@ var express = require('express');
 //Connection URL
 var url = 'mongodb://localhost:27017/mongodb';
 var app = express();
-var port = 8088;
+var port = 8080;
 var products = [];//store products
 var numOfAmount = 0;1
 var sales = 0;
@@ -211,6 +211,7 @@ function sell(req_query) {
             return error = "Error: empty stock";
 
         }
+        showCurrentStocker();
         for (; (index <= products.length) && !(JSON.stringify(products[index].name) === JSON.stringify(req_query.name)); index++);
 
 
@@ -373,7 +374,16 @@ function checksales(req_query){
             {
                 temp_salse = parseFloat(products[index].salse);
                 fixed_salse = temp_salse.toFixed(2);
-                result = products[index].name + " : "+ fixed_salse;
+                if(fixed_salse.includes(".00"))
+                {
+                    //salse value was actually int
+                    result = products[index].name + " : " + parseInt(fixed_salse);
+                }
+                else
+                {
+                    result = products[index].name + " : "+ fixed_salse;
+                }
+
             }
         }//for
 
