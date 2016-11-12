@@ -154,7 +154,7 @@ function checkstock(req_query){
             //console.log("p_name" + p_name);
             if(JSON.stringify(products[index].name) === JSON.stringify(p_name))
             {
-                result = products[index].name + " : " + products[index].amount;
+                result = products[index].name + ": " + products[index].amount;
 
                 //console.log(products[index].name + " : " + products[index].amount);
                 treated = true;
@@ -181,7 +181,7 @@ function checkstock(req_query){
 
         for(index in products)
         {
-            result += products[index].name +" : " + products[index].amount + "\n";
+            result += products[index].name +": " + products[index].amount + "\n";
         }
 
     }//else
@@ -211,7 +211,7 @@ function sell(req_query) {
             return error = "Error: empty stock";
 
         }
-        showCurrentStocker();
+
         for (; (index <= products.length) && !(JSON.stringify(products[index].name) === JSON.stringify(req_query.name)); index++);
 
 
@@ -323,6 +323,7 @@ function sell(req_query) {
     {
         error = "ERROR: missing requirement";
     }
+    showCurrentStocker();
     return error;
     //console.log("in sell aft for");
 };//sell
@@ -378,12 +379,12 @@ function checksales(req_query){
                 {
                     //salse value was actually int
                     //result = products[index].name + " : " + parseInt(fixed_salse);
-                    result = "salse" + " : " + parseInt(fixed_salse);
+                    result = "sales" + " : " + parseInt(fixed_salse);
                 }
                 else
                 {
                     //result = products[index].name + " : "+ fixed_salse;
-                    result =  "salse" + " : " + fixed_salse;
+                    result =  "sales" + " : " + fixed_salse;
                 }
 
             }
