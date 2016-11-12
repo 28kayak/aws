@@ -211,8 +211,15 @@ function sell(req_query) {
             return error = "Error: empty stock";
 
         }
+        try
+        {
+            for (; (index <= products.length) && !(JSON.stringify(products[index].name) === JSON.stringify(req_query.name)); index++);
+        }
+        catch(err)
+        {
+            console.log("Name is undefined");
+        }
 
-        for (; (index <= products.length) && !(JSON.stringify(products[index].name) === JSON.stringify(req_query.name)); index++);
 
 
         //console.log("products[index] =  " + products[index].name);
