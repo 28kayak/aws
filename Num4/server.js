@@ -2,9 +2,9 @@
  * Created by kaya on 11/3/16.
  */
 var express = require('express');
-var mongo = require('mongo');
+//var mongo = require('mongo');
 //mongodb client side
-var MongoClient = require('mongodb').MongoClient, assert = require('assert');
+//var MongoClient = require('mongodb').MongoClient, assert = require('assert');
 //Connection URL
 var url = 'mongodb://localhost:27017/mongodb';
 var app = express();
@@ -391,7 +391,8 @@ app.use('/stocker', function (req, res) {
     var result = "";
     if(req.query.hasOwnProperty("amount")&& req.query.amount.includes("."))
     {
-        result = "ERROR: amount is decimal";
+        //result = "ERROR: amount is decimal";
+        result ="ERROR";
     }
     else
     {
