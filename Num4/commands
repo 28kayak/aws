@@ -1,0 +1,18 @@
+curl http://10.250.121.101:8080/stocker?function=deleteall
+ curl http://10.250.121.101:8080/stocker?function=addstock&name=xxx&amount=54
+curl  http://10.250.121.101:8080/stocker?function=checkstock&name=xxx
+ curl http://10.250.121.101:8080/stocker?function=addstock&name=yyy&amount=30
+ curl http://10.250.121.101:8080/stocker?function=checkstock
+ (expects xxx: 51
+yyy: 30) ... AMAZON [NG]
+curl "http://54.238.241.223:8080/stocker?function=deleteall"
+curl "http://54.238.241.223:8080/stocker?function=addstock&name=xxx&amount=1.7323314155537122"
+  (expects ERROR) ... AMAZON [NG]
+curl "http://54.238.241.223:8080/stocker?function=deleteall"
+ curl "http://54.238.241.223:8080/stocker?function=addstock&name=aaa&amount=1095"
+ curl "http://54.238.241.223:8080/stocker?function=addstock&name=bbb&220"
+ curl "http://54.238.241.223:8080/stocker?function=sell&name=aaa&amount=32&price=408"
+ curl "http://54.238.241.223:8080/stocker?function=sell&name=aaa&price=89"
+ curl "http://54.238.241.223:8080/stocker?function=checksales"
+  (expects sales: 13145) ... AMAZON [NG]
+
