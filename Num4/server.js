@@ -6,6 +6,7 @@ var express = require('express');
 //mongodb client side
 //var MongoClient = require('mongodb').MongoClient, assert = require('assert');
 //Connection URL
+//this is a sourcecode 
 var url = 'mongodb://localhost:27017/mongodb';
 var app = express();
 var port = 8080;
@@ -470,12 +471,6 @@ app.use('/stocker', function (req, res) {
     }
     //res.end("Current Stock:" + JSON.stringify(products) +"\n" + result +"\n");
 });//use
-
-
-
-
-
-
 
 app.listen(port, function () {
     console.log("Run @ http://localhost:"+port);
