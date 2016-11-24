@@ -6,10 +6,6 @@ var MongoClient = require('mongodb').MongoClient, assert = require('assert');
 var app = express();
 
 
-//===============Num 1 =========================================
-app.use('/', function(req,res){
-    res.end("AMAZON");
-});
 
 //===============Num 2 ===========================================
 var basicAuth = require('basic-auth');
@@ -33,7 +29,6 @@ var auth = function (req, res, next) {
 app.get("/secret", auth, function (req, res) {
     res.send("SUCCESS\n");
 });
-
 //=============Num 3 ====================================================
 function calc(equation){
     var result;
@@ -471,4 +466,15 @@ app.use('/stocker', function (req, res) {
         res.end(result + "\n");
     }
 });//use
+//===============Num 1 =========================================
+app.use('/', function(req,res){
+    res.end("AMAZON+\n");
+});
+
+//=================================LISTEN=======================================
+var port = 8080;
+app.listen(port, function () {
+    console.log("Run @ http://localhost:"+port);
+});//listen
+
 

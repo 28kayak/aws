@@ -11,7 +11,7 @@ var url = 'mongodb://localhost:27017/mongodb';
 var app = express();
 var port = 8080;
 var products = [];//store products
-var numOfAmount = 0;1
+var numOfAmount = 0;
 var sales = 0;
 
 function sortBy(propaty){
@@ -26,19 +26,13 @@ function sortBy(propaty){
 }//sortBy
 
 function addstock(req_query){
-
     var newAmount = 0;//init newAmount
     var treated = false;//check if given product is treated
     var newProduct = {};
     var error = "";
     if(req_query.hasOwnProperty("amount"))
     {
-
-
         var additional = parseInt(req_query.amount);//treat double as int
-        //console.log(req_query.amount);
-        //var givenAmount = parseInt(JSON.stringify(req_query.amount));
-        //console.log(Number.isInteger(additional));
         if(! Number.isInteger(additional))
         {
             error = "ERROR @ isInt";
@@ -406,11 +400,6 @@ function checksales(req_query){
 }//checkSalse
 
 app.use('/stocker', function (req, res) {
-    //console.log('in add stock');
-    //console.log('in endpoint');
-    //var color = req.query.color;
-    //console.log("type of");
-    //console.log(typeof req.query.amount);
     var result = "";
     if(req.query.hasOwnProperty("amount")&& req.query.amount.includes("."))
     {
@@ -448,17 +437,6 @@ app.use('/stocker', function (req, res) {
 
     }
 
-
-    //console.log("function : " + req.query.function);
-
-    //if(f === )
-
-
-    //var p = {"name" : "ipad", "amount":8};
-    //addstock(productInfo);
-    //addstock(p);
-    //checkstock(req.query);
-    //sell(req.query);
     if(result === undefined)
     {
         //request was no error and the function has  no output msg
@@ -469,7 +447,6 @@ app.use('/stocker', function (req, res) {
         //there is output msg xor error msg
         res.end(result + "\n");
     }
-    //res.end("Current Stock:" + JSON.stringify(products) +"\n" + result +"\n");
 });//use
 
 app.listen(port, function () {
