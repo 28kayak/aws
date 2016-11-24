@@ -216,7 +216,7 @@ function checkstock(req_query){
         for(index in products)
         {
             //result += products[index].name +": " + products[index].amount + "\n";
-            result += products[index].name +": " + products[index].amount + "　";
+            result += products[index].name +": " + products[index].amount + "　\n";
         }
 
     }//else
