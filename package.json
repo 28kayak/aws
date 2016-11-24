@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/28kayak/aws",
   "dependencies": {
+    "basic-auth": "^1.1.0",
     "express": "^4.14.0",
     "mongodb": "^2.2.11"
   }
