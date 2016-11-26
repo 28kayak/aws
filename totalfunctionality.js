@@ -472,7 +472,7 @@ app.use('/stocker', function (req, res) {
 });//use
 //===============Num 1 =========================================
 app.use('/', function(req,res){
-    res.end("AMAZON+\n");
+    res.end("AMAZON\n");
 });
 
 //=================================LISTEN=======================================
