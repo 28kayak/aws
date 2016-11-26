@@ -212,7 +212,7 @@ function checkstock(req_query){
         products.sort( sortBy("name") );
         //console.log("show result");
         //console.log(products);
-        result = "\n";
+        result = "";
         for(index in products)
         {
             //result += products[index].name +": " + products[index].amount + "\n";
